@@ -4,8 +4,8 @@
 
 <%@ include file="/WEB-INF/views/include/head.jsp" %>
 <style>
-	div{
-		width : 40%;
+	div:not(.doubles){
+		width : 50%;
 		border-bottom-width : 3px;
 		border-bottom-color:  black;
 		border-bottom-style:  solid;
@@ -19,6 +19,9 @@
   }
   th, td {
     border: 1px solid #444444;
+  }
+  .isholder{
+	  background-color: yellowgreen;
   }
 </style>
 
@@ -97,11 +100,189 @@
 		</tbody>
 	</table>
 	</div>
-	<div>
-		3
+	<div style="overflow:auto; height: auto;">
+		stop시 console에 log찍기 + helper조절 -> tr유지하기 
+			<table style="width:95%">
+				<tbody class="soartable5">
+					<tr width = 40% class="soart1">
+						<td>첫번째요소</td>
+						<td>두번째요소</td>
+						<td>세번째요소</td>
+					</tr>
+					<tr width = 40% class="soart2">
+						<td>네번째요소</td>
+						<td>다섯번째요소</td>
+						<td>여섯번째요소</td>
+					</tr>
+					<tr width = 40% class="soart3">
+						<td>일곱번째요소</td>
+						<td>여덟번째요소</td>
+						<td>아홉번째요소</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="doubles">
+			두개의 테이블 잇기 (connectWith)+ placeHolder
+			</div>
+			<div style="width:30%; float:left; display:inline;" class="doubles">
+				<table>
+					<tbody id="soartable1" class="soartableConnect1">
+						<tr class="Title">
+							<td colspan="3">제목바</td>
+						</tr>
+						<tr width = 40% class="soart1">
+							<td>첫번째요소</td>
+							<td>두번째요소</td>
+							<td>세번째요소</td>
+						</tr>
+						<tr width = 40% class="soart2">
+							<td>네번째요소</td>
+							<td>다섯번째요소</td>
+							<td>여섯번째요소</td>
+						</tr>
+						<tr width = 40% class="soart3">
+							<td>일곱번째요소</td>
+							<td>여덟번째요소</td>
+							<td>아홉번째요소</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="width:30%; float:left; display:inline; margin-left: 10px;"  class="doubles">
+				<table>
+					<tbody id="soartable2" class="soartableConnect1">
+						<tr class="Title">
+							<td colspan="3">제목바</td>
+						</tr>
+						<tr width = 40% class="soart1">
+							<td>첫번째요소</td>
+							<td>두번째요소</td>
+							<td>세번째요소</td>
+						</tr>
+						<tr width = 40% class="soart2">
+							<td>네번째요소</td>
+							<td>다섯번째요소</td>
+							<td>여섯번째요소</td>
+						</tr>
+						<tr width = 40% class="soart3">
+							<td>일곱번째요소</td>
+							<td>여덟번째요소</td>
+							<td>아홉번째요소</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
-	<div>
-		4
+	<div style="overflow:auto; height: auto;">
+			<div class="doubles">
+			비어있는 곳으로 이동 못하게 막기 (왼쪽은 막고 오른쪽은 안막음 )
+			</div>
+			<div style="width:45%; float:left; display:inline;" class="doubles">
+				<table>
+					<tbody id="soartable3" class="soartableConnect2">
+						<tr class="Title">
+							<td colspan="3">제목바</td>
+						</tr>
+						<tr width = 40% class="soart1">
+							<td>첫번째요소</td>
+							<td>두번째요소</td>
+							<td>세번째요소</td>
+						</tr>
+						<tr width = 40% class="soart2">
+							<td>네번째요소</td>
+							<td>다섯번째요소</td>
+							<td>여섯번째요소</td>
+						</tr>
+						<tr width = 40% class="soart3">
+							<td>일곱번째요소</td>
+							<td>여덟번째요소</td>
+							<td>아홉번째요소</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="width:45%; float:left; display:inline; margin-left: 5%;"  class="doubles">
+				<table>
+					<tbody id="soartable4" class="soartableConnect2">
+						<tr class="Title">
+							<td colspan="3">제목바</td>
+						</tr>
+						<tr width = 40% class="soart1">
+							<td>첫번째요소</td>
+							<td>두번째요소</td>
+							<td>세번째요소</td>
+						</tr>
+						<tr width = 40% class="soart2">
+							<td>네번째요소</td>
+							<td>다섯번째요소</td>
+							<td>여섯번째요소</td>
+						</tr>
+						<tr width = 40% class="soart3">
+							<td>일곱번째요소</td>
+							<td>여덟번째요소</td>
+							<td>아홉번째요소</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="doubles" style="width:95%;" >
+				핸들링을 제목바로 지정하기 
+				</div>
+			<div id ="inlines">
+				<div id="soartable5" style="width:45%; float:left; display:inline;" class="doubles  soartableConnect3">
+					div1번
+					<table>
+						<tbody>
+							<tr class="Title">
+								<td colspan="3">제목바</td>
+							</tr>
+							<tr width = 40% class="soart1">
+								<td>첫번째요소</td>
+								<td>두번째요소</td>
+								<td>세번째요소</td>
+							</tr>
+							<tr width = 40% class="soart2">
+								<td>네번째요소</td>
+								<td>다섯번째요소</td>
+								<td>여섯번째요소</td>
+							</tr>
+							<tr width = 40% class="soart3">
+								<td>일곱번째요소</td>
+								<td>여덟번째요소</td>
+								<td>아홉번째요소</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div  id="soartable6" style="width:45%; float:left; display:inline; margin-left: 5%;"  class="doubles soartableConnect3">
+					div2번
+					<table>
+						<tbody>
+							<tr class="Title">
+								<td colspan="3">제목바</td>
+							</tr>
+							<tr width = 40% class="soart1">
+								<td>1번째요소</td>
+								<td>2번째요소</td>
+								<td>3번째요소</td>
+							</tr>
+							<tr width = 40% class="soart2">
+								<td>4번째요소</td>
+								<td>5번째요소</td>
+								<td>6번째요소</td>
+							</tr>
+							<tr width = 40% class="soart3">
+								<td>7번째요소</td>
+								<td>8번째요소</td>
+								<td>9번째요소</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 
@@ -110,6 +291,44 @@
 	$('.soartable2').sortable();
 	$('.soartable3').sortable({cancel : ".soart2"});
 	$('.soartable4').sortable({items : "tr:not(.soart2)"});
+	$('.soartable5').sortable({
+		stop : function(event, ui){
+			console.log("5번이 stop됨");
+		},//stop end
+		helper: function(event, ui) { //테이블 드래그할때 width값 설정하기
+		    var clone = ui.clone();
+		    clone.children().each(function(idx){
+		        $(this).width(ui.children().eq(idx).width());
+		    });
+		    return clone;
+		} //helper end
+
+	});
+	
+	$('#soartable1, #soartable2').sortable({
+		items : 'tr:not(.Title)',
+		connectWith : '.soartableConnect1',
+		placeholder : '.isholder'
+	}).disableSelection();
+
+	$('#soartable3').sortable({
+		items : 'tr:not(.Title)',
+		connectWith : '.soartableConnect2',
+		dropOnEmpty: false
+	}).disableSelection();
+
+	$('#soartable4').sortable({
+		items : 'tr:not(.Title)',
+		connectWith : '.soartableConnect2',
+		dropOnEmpty: true
+	}).disableSelection();
+
+	$('#soartable5, #soartable6').sortable({
+		items : 'table',
+		connectWith : '.soartableConnect3',
+		handle : ".Title",
+		placeholder : ".isholder"
+	}).disableSelection();
 </script>
 
 </html>
